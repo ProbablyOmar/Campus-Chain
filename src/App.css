@@ -1,38 +1,101 @@
 .App {
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+html {
+  background-color: rgb(81, 87, 151);
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+a {
+  text-decoration: none;
+  color: #f2f2f2;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+#balance {
+  font-size: 0.6em !important;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  border-radius: 7px;
+  padding: 7px;
+}
+.Header {
+  text-align: center;
+  background-color: rgb(88, 93, 88);
+  height: 10vh;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  display: flex;
+  border-radius: 6px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+}
+#title {
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+}
+#balance {
+  position: absolute;
+  left: 90%;
+  font-size: small;
+}
+.navBar {
+  background-color: rgb(0, 0, 0);
+  overflow: hidden;
+  position: sticky;
+  display: flex;
+  z-index: 2000;
+  top: 0;
+}
+.navitems {
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  width: 33%;
+  color: #f2f2f2;
+  padding: 14px 14.6%;
+  overflow: hidden;
+}
+.navBar a:hover {
+  background-color: #562d60;
   color: white;
 }
-
-.App-link {
-  color: #61dafb;
+#navitems {
+  display: flex;
+  justify-content: stretch;
+  border: 5px solid red;
+  overflow: hidden;
+}
+#questionlist {
+  list-style: none;
+}
+#questionbox {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border-radius: 10px;
+  padding-left: 3%;
+  padding-right: 3%;
+  position: relative;
+  background-color: black;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 2em;
+}
+#questionlink :hover {
+  background-color: #562d60;
+  cursor: pointer;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#addquestion {
+  background-color: black;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-size: larger;
+  color: #f2f2f2;
+  border-radius: 70px;
+  cursor: pointer;
+  border: 2px solid black;
+  height: 20vh;
+  width: 30vh;
+  margin: 10vh;
+}
+#addquestion:hover {
+  background-color: #562d60;
+  color: white;
 }
