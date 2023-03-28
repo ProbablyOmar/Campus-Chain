@@ -15,6 +15,9 @@ function NavBar() {
           {" "}
           My Questions
         </NavLink>
+        <NavLink to="/signin" className="navitems">
+          Sign in
+        </NavLink>
       </div>
     </nav>
   );

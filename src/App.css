@@ -2,7 +2,10 @@
   text-align: center;
 }
 html {
-  background-color: rgb(81, 87, 151);
+  background-color: rgb(81, 87, 151) !important;
+}
+#root {
+  background-color: rgb(81, 87, 151) !important;
 }
 a {
   text-decoration: none;
@@ -13,6 +16,8 @@ a {
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   border-radius: 7px;
   padding: 7px;
+  position: absolute;
+  left: 90%;
 }
 .Header {
   text-align: center;
@@ -29,16 +34,12 @@ a {
 #title {
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
 }
-#balance {
-  position: absolute;
-  left: 90%;
-  font-size: small;
-}
 .navBar {
   background-color: rgb(0, 0, 0);
   overflow: hidden;
   position: sticky;
   display: flex;
+  justify-content: center;
   z-index: 2000;
   top: 0;
 }
@@ -47,12 +48,11 @@ a {
   display: block;
   text-align: center;
   text-decoration: none;
-  width: 33%;
+  width: 25%;
   color: #f2f2f2;
-  padding: 14px 14.6%;
-  overflow: hidden;
+  padding: 14px 10%;
 }
-.navBar a:hover {
+.navBar .navitems:hover {
   background-color: #562d60;
   color: white;
 }
@@ -67,18 +67,17 @@ a {
 }
 #questionbox {
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  flex-direction: row;
+  align-items: center;
   border-radius: 10px;
-  padding-left: 3%;
-  padding-right: 3%;
-  position: relative;
+  padding-left: 0.5%;
+  padding-right: 0.5%;
   background-color: black;
   margin-left: 20px;
   margin-right: 20px;
   margin-top: 2em;
 }
-#questionlink :hover {
+.questiondata :hover {
   background-color: #562d60;
   cursor: pointer;
 }
@@ -98,4 +97,32 @@ a {
 #addquestion:hover {
   background-color: #562d60;
   color: white;
+}
+.ratingbox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100%;
+  max-width: min-content;
+}
+.vote {
+  display: inline-block;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  color: #687074;
+}
+
+.vote :hover {
+  color: #f48024;
+}
+
+.vote .clicked {
+  color: #f48024;
+}
+
+.form {
+  background-color: rgb(81, 87, 151);
+  padding-top: 3em;
 }

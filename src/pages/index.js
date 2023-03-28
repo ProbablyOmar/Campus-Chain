@@ -39,8 +39,6 @@ function MainPage() {
       />
     );
   });
-  console.log("Here I am");
-  console.log(formatedQuestions);
   return (
     <div>
       <button id="addquestion">Add Question</button>
