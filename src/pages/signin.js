@@ -28,6 +28,12 @@ function Signin() {
               Log In
             </button>
           </a>
+          <br />
+          <a href="/register">
+            <button class="btn btn-primary m-2" type="button">
+              Register
+            </button>
+          </a>
         </form>
       </div>
     </div>

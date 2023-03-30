@@ -1,7 +1,7 @@
 function Register() {
   return (
     <div>
-      <form action="/register" class="row g-3 form" method="post">
+      <form action="/register" class="row g-3 form m-5" method="post">
         <div class="col-md-6">
           <div class="input-group">
             <span class="input-group-text">Username</span>
@@ -73,7 +73,7 @@ function Register() {
 
         <div class="col-md-6">
           <div class="input-group">
-            <span class="input-group-text">Phone Number</span>
+            <span class="input-group-text">MetaMask Number</span>
             <input
               required
               autocomplete="off"
@@ -88,7 +88,7 @@ function Register() {
         </div>
 
         <div class="col-12">
-          <button class="btn btn-primary  w-25" type="submit">
+          <button class="btn btn-primary m-auto w-25" type="submit">
             Register
           </button>
         </div>
