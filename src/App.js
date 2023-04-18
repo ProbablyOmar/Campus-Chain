@@ -13,7 +13,6 @@ function App() {
     <div className="App">
       <Router>
         <Header />
-        <NavBar />
         <Routes>
           <Route exact path="/" element={<MainPage />} />
           <Route path="/myquestions" element={<MyQuestions />} />
