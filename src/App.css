@@ -1,3 +1,5 @@
+/*SOLVE OVERFLOW ISSUE IN QUESTION COMPONENT*/
+
 .App {
   text-align: center;
 }
@@ -22,7 +24,7 @@ a {
   border-radius: 14px;
   border: none;
   background-color: #1c3738;
-  background-image: url(../Images/magnifying-glass.png);
+  background-image: url(/src/images/magnifying-glass.png);
   background-size: 25px;
   background-position: 5px 5px;
   background-repeat: no-repeat;
@@ -172,7 +174,7 @@ a {
 .questionbox {
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: flex-start;
   border-radius: 10px;
   padding-left: 0.5%;
   padding-right: 0.5%;
@@ -180,10 +182,21 @@ a {
   margin-left: 20px;
   margin-right: 20px;
   margin-top: 2em;
+  height: auto;
+  max-height: 500px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
 }
 .questionbox a {
   all: unset;
-  color: white;
+  color: #e1efe6;
+  color: rgba(225, 239, 230, 0.6);
+}
+.questionbox a h2 {
+  all: unset;
+  color: #e1efe6;
+  font-size: 25pt;
 }
 
 .questionbox:hover {
@@ -195,6 +208,9 @@ a {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  text-align: left;
+  padding: 1em;
+  justify-content: start;
 }
 
 #addquestion {
@@ -220,7 +236,9 @@ a {
   justify-content: center;
   min-height: 100%;
   max-width: min-content;
+  color: #e1efe6;
 }
+
 .vote {
   display: inline-block;
   background: none;

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import commentIcon from "../images/comment.png";
 
 function Question({ title, text, date, rating }) {
   let [question, setQuestion] = useState({});
@@ -44,6 +45,8 @@ function Question({ title, text, date, rating }) {
             <path d="M2 10h32L18 26 2 10z" fill="currentColor"></path>
           </svg>
         </button>
+        <img src={commentIcon} width={36} height={30} alt="comments" />
+        25
       </div>
       <a id="questionlink" href="#question">
         <div className="questiondata">

@@ -14,7 +14,7 @@ function Header() {
         width={50}
       ></img>
       <span id="profile">
-        Fakemandude <br />
+        OliverTheGreat <br />
         <span className="balance">
           <img
             src="melon-icon.png"

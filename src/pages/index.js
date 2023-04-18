@@ -1,40 +1,12 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Question from "../components/question";
 import CreateQuestion from "../components/create-question";
+import data from "../testdata.json";
 function MainPage() {
-  const [questions, setQuestions] = useState([
-    {
-      text: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestias reprehenderit voluptates, recusandae nobis alias sint, repellat, nulla unde necessitatibus ut neque. Quod explicabo tempora magnam ratione eligendi quos dolorem obcaecati?",
-      title: "Cool Question Title1",
-      date: "xx/xx/xxxx",
-      rating: 15,
-    },
-    {
-      text: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestias reprehenderit voluptates, recusandae nobis alias sint, repellat, nulla unde necessitatibus ut neque. Quod explicabo tempora magnam ratione eligendi quos dolorem obcaecati?",
-      title: "Cool Question Title2",
-      date: "xx/xx/xxxx",
-      rating: 15,
-    },
-    {
-      text: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestias reprehenderit voluptates, recusandae nobis alias sint, repellat, nulla unde necessitatibus ut neque. Quod explicabo tempora magnam ratione eligendi quos dolorem obcaecati?",
-      title: "Cool Question Title3",
-      date: "xx/xx/xxxx",
-      rating: 15,
-    },
-    {
-      text: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestias reprehenderit voluptates, recusandae nobis alias sint, repellat, nulla unde necessitatibus ut neque. Quod explicabo tempora magnam ratione eligendi quos dolorem obcaecati?",
-      title: "Cool Question Title",
-      date: "xx/xx/xxxx",
-      rating: 15,
-    },
-    {
-      text: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestias reprehenderit voluptates, recusandae nobis alias sint, repellat, nulla unde necessitatibus ut neque. Quod explicabo tempora magnam ratione eligendi quos dolorem obcaecati?",
-      title: "Cool Question Title",
-      date: "xx/xx/xxxx",
-      rating: 15,
-    },
-  ]);
-
+  const [questions, setQuestions] = useState();
+  useEffect(() => {
+    setQuestions(data);
+  }, []);
   const formatedQuestions = questions
     ? questions.map((question, index) => {
         return (
@@ -48,7 +20,6 @@ function MainPage() {
         );
       })
     : null;
-  console.log(formatedQuestions);
   const postHandler = event => {
     event.preventDefault();
     document.getElementById("postoverlay").style.display = "block";
