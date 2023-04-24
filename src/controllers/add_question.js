@@ -13,6 +13,7 @@ function addQuestionHandler(event, setQuestions, questions) {
     console.log(newQuestion);
     if (oldQuestions) {
       questions["setQuestions"]([newQuestion, ...oldQuestions]);
+      // UPDATE QUESTIONS IN DATABASE
     } else {
       questions["setQuestions"]([newQuestion]);
     }

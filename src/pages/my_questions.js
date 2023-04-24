@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import Question from "../components/question";
 
-function MyQuestions() {
+function QuestionPage() {
   const [questions, setQuestions] = useState([
     {
       text: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestias reprehenderit voluptates, recusandae nobis alias sint, repellat, nulla unde necessitatibus ut neque. Quod explicabo tempora magnam ratione eligendi quos dolorem obcaecati?",
@@ -54,4 +54,4 @@ function MyQuestions() {
   );
 }
 
-export default MyQuestions;
+export default QuestionPage;
