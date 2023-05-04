@@ -15,7 +15,7 @@ function App() {
         <Header />
         <Routes>
           <Route exact path="/" element={<MainPage />} />
-          <Route path="/questions/:questionId" element={<QuestionPage />} />
+          {/*<Route path="/questions/:questionId" element={<QuestionPage />} />*/}
           <Route path="/profile" element={<Profile />} />
           <Route path="/signin" element={<Signin />} />
           <Route path="/register" element={<Register />} />

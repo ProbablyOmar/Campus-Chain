@@ -1,8 +1,8 @@
 import add_question from "../controllers/add_question";
-function CreateQuestion(questions, setQuestions) {
+function CreateQuestion(state) {
   const update_questions = event => {
     event.preventDefault();
-    add_question(event, setQuestions, questions);
+    add_question(event, state);
     document.getElementById("postoverlay").style.display = "none";
     document.getElementById("addquestionform").style.display = "none";
   };

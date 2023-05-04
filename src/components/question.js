@@ -46,7 +46,7 @@ function Question({ title, text, date, rating }) {
           </svg>
         </button>
         <img src={commentIcon} width={36} height={30} alt="comments" />
-        25
+        {rating}
       </div>
       <a id="questionlink" href="#question">
         <div className="questiondata">

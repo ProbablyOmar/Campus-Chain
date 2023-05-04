@@ -1,0 +1,342 @@
+[
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "answerId",
+        "type": "uint256"
+      }
+    ],
+    "name": "AnswerVerified",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "questionId",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "answerId",
+        "type": "uint256"
+      }
+    ],
+    "name": "AnsweredQuestion",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "questionId",
+        "type": "uint256"
+      }
+    ],
+    "name": "QuestionAsked",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "recipient",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "amount",
+        "type": "uint256"
+      }
+    ],
+    "name": "TokensRewarded",
+    "type": "event"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "name": "academicStaff",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "StaffID",
+        "type": "uint256"
+      },
+      {
+        "internalType": "bytes16",
+        "name": "name",
+        "type": "bytes16"
+      },
+      {
+        "internalType": "bytes16",
+        "name": "email",
+        "type": "bytes16"
+      },
+      {
+        "internalType": "bytes32",
+        "name": "field",
+        "type": "bytes32"
+      },
+      {
+        "internalType": "bool",
+        "name": "category",
+        "type": "bool"
+      },
+      {
+        "internalType": "address",
+        "name": "metamaskAddress",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "id",
+        "type": "uint256"
+      },
+      {
+        "internalType": "bytes16",
+        "name": "name",
+        "type": "bytes16"
+      },
+      {
+        "internalType": "bytes16",
+        "name": "_email",
+        "type": "bytes16"
+      },
+      {
+        "internalType": "address",
+        "name": "metamaskAddress",
+        "type": "address"
+      }
+    ],
+    "name": "addAcademicStaff",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "_id",
+        "type": "uint256"
+      },
+      {
+        "internalType": "bytes16",
+        "name": "_name",
+        "type": "bytes16"
+      },
+      {
+        "internalType": "bytes16",
+        "name": "_email",
+        "type": "bytes16"
+      },
+      {
+        "internalType": "address",
+        "name": "metamaskAddress",
+        "type": "address"
+      }
+    ],
+    "name": "addStudent",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "questionId",
+        "type": "uint256"
+      },
+      {
+        "internalType": "string",
+        "name": "text",
+        "type": "string"
+      }
+    ],
+    "name": "answerQuestion",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "text",
+        "type": "string"
+      }
+    ],
+    "name": "askQuestion",
+    "outputs": [],
+    "stateMutability": "payable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "_id",
+        "type": "uint256"
+      }
+    ],
+    "name": "getQuestions",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "uint256",
+            "name": "questionid",
+            "type": "uint256"
+          },
+          {
+            "internalType": "string",
+            "name": "text",
+            "type": "string"
+          },
+          {
+            "internalType": "address",
+            "name": "asker",
+            "type": "address"
+          },
+          {
+            "internalType": "bool",
+            "name": "answered",
+            "type": "bool"
+          }
+        ],
+        "internalType": "struct camp_chain.Question",
+        "name": "",
+        "type": "tuple"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "getUserQuestions",
+    "outputs": [
+      {
+        "internalType": "uint256[]",
+        "name": "",
+        "type": "uint256[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "name": "students",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "StudID",
+        "type": "uint256"
+      },
+      {
+        "internalType": "bytes16",
+        "name": "name",
+        "type": "bytes16"
+      },
+      {
+        "internalType": "bytes16",
+        "name": "email",
+        "type": "bytes16"
+      },
+      {
+        "internalType": "uint256",
+        "name": "points",
+        "type": "uint256"
+      },
+      {
+        "internalType": "bool",
+        "name": "category",
+        "type": "bool"
+      },
+      {
+        "internalType": "address",
+        "name": "metamaskAddress",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "_answer",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "answertime",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "time_now",
+        "type": "uint256"
+      }
+    ],
+    "name": "upvoteA",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "name": "userQuestions",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  }
+]

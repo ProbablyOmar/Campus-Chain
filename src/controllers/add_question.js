@@ -1,8 +1,6 @@
-function addQuestionHandler(event, setQuestions, questions) {
-  console.log(questions);
-  const oldQuestions = questions["questions"]
-    ? [...questions["questions"]]
-    : null;
+function addQuestionHandler(event, state) {
+  console.log(state);
+  const oldQuestions = state.questions ? [...state.questions] : null;
   try {
     const newQuestion = {
       title: event.target.elements.title.value,
@@ -12,10 +10,20 @@ function addQuestionHandler(event, setQuestions, questions) {
     };
     console.log(newQuestion);
     if (oldQuestions) {
-      questions["setQuestions"]([newQuestion, ...oldQuestions]);
+      state.setQuestions([newQuestion, ...oldQuestions]);
       // UPDATE QUESTIONS IN DATABASE
+      alert("A name was submitted: ");
+      //this.setState({ Text: this.state.test });
+      console.log("Submitting file to block...");
+      console.log(state.contract.contract);
+      state.contract.contract.methods
+        .askQuestion(newQuestion.text)
+        .send({ from: state.contract.account })
+        .then(r => {
+          console.log("send data... done");
+        });
     } else {
-      questions["setQuestions"]([newQuestion]);
+      state.setQuestions([newQuestion]);
     }
   } catch (error) {
     console.error(error);
