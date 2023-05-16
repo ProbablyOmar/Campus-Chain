@@ -74,6 +74,7 @@ function MainPage() {
             text={question.text}
             date={question.date}
             rating={question.rating}
+            id={index}
             key={index}
           />
         );

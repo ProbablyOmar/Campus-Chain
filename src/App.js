@@ -3,7 +3,7 @@ import "./App.css";
 import Header from "./components/header.js";
 import NavBar from "./components/navbar";
 import MainPage from "./pages";
-import QuestionPage from "./pages/my_questions";
+import QuestionPage from "./pages/question_page";
 import Profile from "./pages/profile";
 import Signin from "./pages/signin";
 import Register from "./pages/register";
@@ -15,7 +15,7 @@ function App() {
         <Header />
         <Routes>
           <Route exact path="/" element={<MainPage />} />
-          {/*<Route path="/questions/:questionId" element={<QuestionPage />} />*/}
+          <Route path="/questions/:questionId" element={<QuestionPage />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/signin" element={<Signin />} />
           <Route path="/register" element={<Register />} />

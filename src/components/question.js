@@ -1,54 +1,14 @@
 import { useState } from "react";
-import commentIcon from "../images/comment.png";
+import Ratingbox from "./rating_box";
 
-function Question({ title, text, date, rating }) {
+function Question({ title, text, date, rating, id }) {
   let [question, setQuestion] = useState({});
-
-  const upvoteHandler = e => {
-    let newState = { ...question };
-    console.log(e.target.classList);
-    if (e.target.classList.contains("clicked")) {
-      e.target.classList.remove("clicked");
-      newState.rating--;
-      setQuestion(newState);
-    } else {
-      e.target.classList.add("clicked");
-      newState.rating++;
-      setQuestion(newState);
-    }
-  };
-
-  const downvoteHandler = e => {
-    let newState = { ...question };
-    console.log(e.target.classList);
-    if (e.target.classList.contains("clicked")) {
-      e.target.classList.remove("clicked");
-      newState.rating++;
-      setQuestion(newState);
-    } else {
-      e.target.classList.add("clicked");
-      newState.rating--;
-      setQuestion(newState);
-    }
-  };
+  id = id.toString();
+  console.log(id);
   return (
     <div className="questionbox">
-      <div className="ratingbox">
-        <button className="vote" onClick={upvoteHandler}>
-          <svg width="36" height="36">
-            <path d="M2 21h32L18 5 2 21z" fill="currentColor"></path>
-          </svg>
-        </button>
-        <span style={{ color: "white" }}>{rating}</span>
-        <button className="vote" onClick={downvoteHandler}>
-          <svg width="36" height="36">
-            <path d="M2 10h32L18 26 2 10z" fill="currentColor"></path>
-          </svg>
-        </button>
-        <img src={commentIcon} width={36} height={30} alt="comments" />
-        {rating}
-      </div>
-      <a id="questionlink" href="#question">
+      <Ratingbox state={question} setState={setQuestion} rating={rating} />
+      <a id="questionlink" href={`questions/${id}`}>
         <div className="questiondata">
           <h2>{title}</h2>
           <span>{date}</span>

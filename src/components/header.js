@@ -17,7 +17,7 @@ function Header() {
         OliverTheGreat <br />
         <span className="balance">
           <img
-            src="melon-icon.png"
+            src="../melon-icon.png"
             alt="melons"
             width="15px"
             height="15px"

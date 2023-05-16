@@ -171,6 +171,29 @@ a {
 #questionlist {
   list-style: none;
 }
+.questionbigbox {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  color: #e1efe6;
+  border-radius: 10px;
+  padding-left: 0.5%;
+  padding-right: 0.5%;
+  background-color: #000f08;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 2em;
+  height: auto;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+}
+.commentpage {
+  background-color: #000f08;
+  width: 80%;
+  margin: auto;
+  border-radius: 25px;
+}
 .questionbox {
   display: flex;
   flex-direction: row;
@@ -178,7 +201,7 @@ a {
   border-radius: 10px;
   padding-left: 0.5%;
   padding-right: 0.5%;
-  background-color: black;
+  background-color: #000f08;
   margin-left: 20px;
   margin-right: 20px;
   margin-top: 2em;
@@ -204,7 +227,39 @@ a {
   border-width: 5px;
   cursor: pointer;
 }
+.commentbox {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  color: #e1efe6;
+  border-radius: 10px;
+  padding-left: 0.5%;
+  padding-right: 0.5%;
+  background-color: #000f08;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 2em;
+  height: auto;
+  max-height: 500px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+}
+
+.questionbox:hover {
+  border: solid grey;
+  border-width: 5px;
+  cursor: pointer;
+}
 .questiondata {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  padding: 1em;
+  justify-content: start;
+}
+.commentndata {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -252,7 +307,7 @@ a {
   stroke: #f48024;
 }
 
-.vote:focus {
+.vote .clicked {
   color: #f48024;
 }
 

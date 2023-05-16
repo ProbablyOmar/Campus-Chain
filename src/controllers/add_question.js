@@ -13,7 +13,7 @@ function addQuestionHandler(event, state) {
       state.setQuestions([newQuestion, ...oldQuestions]);
       // UPDATE QUESTIONS IN DATABASE
       alert("A name was submitted: ");
-      //this.setState({ Text: this.state.test });
+
       console.log("Submitting file to block...");
       console.log(state.contract.contract);
       state.contract.contract.methods

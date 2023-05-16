@@ -3,7 +3,15 @@
     "text": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestias reprehenderit voluptates, recusandae nobis alias sint, repellat, nulla unde necessitatibus ut neque. Quod explicabo tempora magnam ratione eligendi quos dolorem obcaecati?",
     "title": "Cool Question Title1",
     "date": "xx/xx/xxxx",
-    "rating": 15
+    "rating": 15,
+    "comments": [
+      { "text": "I love this", "date": "xx/xx/xxxx", "rating": 25 },
+      { "text": "I love this", "date": "xx/xx/xxxx", "rating": 25 },
+      { "text": "I love this", "date": "xx/xx/xxxx", "rating": 25 },
+      { "text": "I love this", "date": "xx/xx/xxxx", "rating": 25 },
+      { "text": "I love this", "date": "xx/xx/xxxx", "rating": 25 },
+      { "text": "I love this", "date": "xx/xx/xxxx", "rating": 25 }
+    ]
   },
   {
     "text": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestias reprehenderit voluptates, recusandae nobis alias sint, repellat, nulla unde necessitatibus ut neque. Quod explicabo tempora magnam ratione eligendi quos dolorem obcaecati?",
