@@ -9,62 +9,60 @@ function MainPage({ isLoggedIn, setIsLoggedIn }) {
   const [questions, setQuestions] = useState();
   const [contractState, setContract] = useState();
   console.log(questions);
-  useEffect(
-    () => {
-      // SET UP CONTRACT
-      const loadWeb3 = () => {
-        if (window.ethereum) {
-          window.web3 = new Web3(window.ethereum);
-          window.ethereum.enable();
-        } else if (window.web3) {
-          window.web3 = new Web3(window.web3.currentProvider);
-        } else {
-          window.alert(
-            "Non-Ethereum browser detected. You should consider trying MetaMask!"
-          );
-        }
-      };
-      // FETCH HASH FROM BLOCKCHAIN
-      const loadBlockchainData = async () => {
-        const web3 = window.web3;
-        // Load account
-        const accounts = await web3.eth.getAccounts();
-        //console.log("accounts: ", accounts);
-        const networkId = await web3.eth.net.getId();
-        //console.log(networkId);
-        if (networkId) {
-          const contract = new web3.eth.Contract(
-            camp_chain,
-            "0x5FbDB2315678afecb367f032d93F642f64180aa3"
-          );
+  useEffect(() => {
+    // SET UP CONTRACT
+    const loadWeb3 = () => {
+      if (window.ethereum) {
+        window.web3 = new Web3(window.ethereum);
+        window.ethereum.enable();
+      } else if (window.web3) {
+        window.web3 = new Web3(window.web3.currentProvider);
+      } else {
+        window.alert(
+          "Non-Ethereum browser detected. You should consider trying MetaMask!"
+        );
+      }
+    };
+    // FETCH HASH FROM BLOCKCHAIN
+    const loadBlockchainData = async () => {
+      const web3 = window.web3;
+      // Load account
+      const accounts = await web3.eth.getAccounts();
+      //console.log("accounts: ", accounts);
+      const networkId = await web3.eth.net.getId();
+      //console.log(networkId);
+      if (networkId) {
+        const contract = new web3.eth.Contract(
+          camp_chain,
+          "0x5FbDB2315678afecb367f032d93F642f64180aa3"
+        );
 
-          setContract({ account: accounts[0], contract });
-          let Question = await contract.methods.getQuestions(12).call();
-          console.log(Question.text);
-          Question = {
-            ...Question,
-            title: "Blockhain Question",
-            rating: 4.5,
-            date: "xx/xx/xxxx",
-          };
-          setQuestions([/*...questions,*/ Question]);
-          console.log(Question.text);
-          console.log("done");
-          console.log(questions);
-        } else {
-          window.alert("Smart contract not deployed to detected network.");
-        }
-      };
-      /*setQuestions(data);*/
-      loadWeb3();
-      loadBlockchainData();
-      // FETCH QUESTIONS FROM IPFS
-      // STORE DATA IN VARIABLE "data"
-    },
-    [
-      /*, contractState*/
-    ]
-  );
+        setContract({ account: accounts[0], contract });
+        let Question = await contract.methods.getQuestions(12).call();
+        console.log(Question.text);
+        Question = {
+          ...Question,
+          title: "Blockhain Question",
+          rating: 4.5,
+          date: "xx/xx/xxxx",
+        };
+        setQuestions(questions => {
+          if (questions) return [...questions, Question];
+          else return [Question];
+        });
+
+        console.log(Question.text);
+        console.log("done");
+      } else {
+        window.alert("Smart contract not deployed to detected network.");
+      }
+    };
+    /*setQuestions(data);*/
+    loadWeb3();
+    loadBlockchainData();
+    // FETCH QUESTIONS FROM IPFS
+    // STORE DATA IN VARIABLE "data"
+  }, []);
   //console.log(contractState);
   const formatedQuestions = questions
     ? questions.map((question, index) => {
