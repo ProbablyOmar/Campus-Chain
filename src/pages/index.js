@@ -2,10 +2,10 @@ import { useState, useEffect } from "react";
 import Web3 from "web3";
 import Question from "../components/question";
 import CreateQuestion from "../components/create-question";
-import data from "../testdata.json";
+/*import data from "../testdata.json";*/
 import camp_chain from "../abis/camp_chain.json";
 
-function MainPage() {
+function MainPage({ isLoggedIn, setIsLoggedIn }) {
   const [questions, setQuestions] = useState();
   const [contractState, setContract] = useState();
   console.log(questions);
@@ -39,23 +39,23 @@ function MainPage() {
           );
 
           setContract({ account: accounts[0], contract });
-          /*let Question = await contract.methods.getQuestions(12).call();
-        console.log(Question.text);
-        Question = {
-          ...Question,
-          title: "Blockhain Question",
-          rating: 4.5,
-          date: "xx/xx/xxxx",
-        };
-        setQuestions([...questions, Question]);
-        console.log(Question.text);
-        console.log("done");
-        console.log(questions);*/
+          let Question = await contract.methods.getQuestions(12).call();
+          console.log(Question.text);
+          Question = {
+            ...Question,
+            title: "Blockhain Question",
+            rating: 4.5,
+            date: "xx/xx/xxxx",
+          };
+          setQuestions([/*...questions,*/ Question]);
+          console.log(Question.text);
+          console.log("done");
+          console.log(questions);
         } else {
           window.alert("Smart contract not deployed to detected network.");
         }
       };
-      setQuestions(data);
+      /*setQuestions(data);*/
       loadWeb3();
       loadBlockchainData();
       // FETCH QUESTIONS FROM IPFS

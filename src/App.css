@@ -311,7 +311,17 @@ a {
   color: #f48024;
 }
 
-.form {
-  background-color: rgb(81, 87, 151);
-  padding-top: 3em;
+.signInButton {
+  padding: 7px;
+  position: absolute;
+  right: 2%;
+  background-color: #d64933;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-size: larger;
+  color: #f2f2f2;
+  border-radius: 28px;
+  cursor: pointer;
+  border: 1px solid black;
+  height: 6vh;
+  width: 15vh;
 }

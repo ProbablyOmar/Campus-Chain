@@ -1,36 +1,61 @@
-function Signin() {
+import { useNavigate } from "react-router-dom";
+import { useState } from "react";
+
+function Signin({ isLoggedIn, setIsLoggedIn }) {
+  const navigate = useNavigate("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState();
+
+  const handleUsernameChange = e => {
+    setEmail(e.target.value);
+  };
+
+  const handlePasswordChange = e => {
+    setPassword(e.target.value);
+  };
+
+  const handleLogIn = e => {
+    e.preventDefault();
+
+    // Add Authentication
+    setIsLoggedIn(true);
+    navigate("/");
+  };
   return (
     <div>
-      <div class="container mt-5">
-        <form action="/login" method="post">
-          <div class="mb-3">
+      <div className="container mt-5">
+        <form onSubmit={handleLogIn}>
+          <div className="mb-3">
             <input
-              autocomplete="off"
-              autofocus
-              class="form-control mx-auto w-auto"
+              autoComplete="off"
+              autoFocus
+              className="form-control mx-auto w-auto"
               id="username"
               name="username"
               placeholder="Username"
               type="text"
+              onChange={handleUsernameChange}
             />
           </div>
-          <div class="mb-3">
+          <div className="mb-3">
             <input
-              class="form-control mx-auto w-auto"
+              className="form-control mx-auto w-auto"
               id="password"
               name="password"
               placeholder="Password"
               type="password"
+              onChange={handlePasswordChange}
             />
           </div>
-          <a href="/">
-            <button class="btn btn-primary" type="button">
-              Log In
-            </button>
-          </a>
+          <input
+            className="btn btn-primary"
+            type="submit"
+            value="Sign In"
+          ></input>
+
           <br />
           <a href="/register">
-            <button class="btn btn-primary m-2" type="button">
+            <button className="btn btn-primary m-2" type="button">
               Register
             </button>
           </a>
