@@ -194,6 +194,22 @@ a {
   margin: auto;
   border-radius: 25px;
 }
+#commentinput {
+  background-color: #1c3738;
+  color: #e1efe6;
+}
+#submitcomment {
+  background-color: #d64933;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-size: larger;
+  color: #f2f2f2;
+  border-radius: 28px;
+  cursor: pointer;
+  border: 1px solid black;
+  height: 40px;
+  width: 200px;
+  margin-left: 70%;
+}
 .questionbox {
   display: flex;
   flex-direction: row;

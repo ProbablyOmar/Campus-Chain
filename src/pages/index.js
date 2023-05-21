@@ -2,22 +2,43 @@ import { useState, useEffect } from "react";
 import Web3 from "web3";
 import Question from "../components/question";
 import CreateQuestion from "../components/create-question";
-/*import data from "../testdata.json";*/
+import data from "../testdata.json";
 import camp_chain from "../abis/camp_chain.json";
 
-function MainPage({ contractState }) {
+function MainPage() {
   const [questions, setQuestions] = useState();
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-  console.log(contractState);
+  const [contractState, setContract] = useState();
+  console.log(questions);
   useEffect(() => {
-    console.log(contractState);
-    if (contractState) {
-      const getQuestions = async () => {
-        let Question = await contractState.contract.methods
-          .getQuestion(12)
-          .call();
+    // SET UP CONTRACT
+    const loadWeb3 = () => {
+      if (window.ethereum) {
+        window.web3 = new Web3(window.ethereum);
+        window.ethereum.enable();
+      } else if (window.web3) {
+        window.web3 = new Web3(window.web3.currentProvider);
+      } else {
+        window.alert(
+          "Non-Ethereum browser detected. You should consider trying MetaMask!"
+        );
+      }
+    };
+    // FETCH HASH FROM BLOCKCHAIN
+    const loadBlockchainData = async () => {
+      const web3 = window.web3;
+      // Load account
+      const accounts = await web3.eth.getAccounts();
+      //console.log("accounts: ", accounts);
+      const networkId = await web3.eth.net.getId();
+      //console.log(networkId);
+      if (networkId) {
+        const contract = new web3.eth.Contract(
+          camp_chain,
+          "0x5FbDB2315678afecb367f032d93F642f64180aa3"
+        );
+
+        setContract({ account: accounts[0], contract });
+        let Question = await contract.methods.getQuestions(12).call();
         console.log(Question.text);
         Question = {
           ...Question,
@@ -26,91 +47,24 @@ function MainPage({ contractState }) {
           date: "xx/xx/xxxx",
         };
         setQuestions(questions => {
-          if (questions) return [...questions, Question];
-          else return [Question];
+          return questions ? [Question, ...questions] : [Question];
         });
-
         console.log(Question.text);
         console.log("done");
+        console.log(questions);
+      } else {
+        window.alert("Smart contract not deployed to detected network.");
+      }
+    };
+    setQuestions(questions => {
+      return questions ? [...data, ...questions] : [...data];
+    });
+    loadWeb3();
+    loadBlockchainData();
+    // FETCH QUESTIONS FROM IPFS
+    // STORE DATA IN VARIABLE "data"
+  }, []);
 
-        /*setQuestions(data);*/
-      };
-      getQuestions();
-      // FETCH QUESTIONS FROM IPFS
-      // STORE DATA IN VARIABLE "data"
-    }
-  }, [contractState]);
-=======
-=======
->>>>>>> parent of b220a5a (Modifed Dependancy array for mainpage hook)
-=======
->>>>>>> parent of b220a5a (Modifed Dependancy array for mainpage hook)
-  const [contractState, setContract] = useState();
-  console.log(questions);
-  useEffect(
-    () => {
-      // SET UP CONTRACT
-      const loadWeb3 = () => {
-        if (window.ethereum) {
-          window.web3 = new Web3(window.ethereum);
-          window.ethereum.enable();
-        } else if (window.web3) {
-          window.web3 = new Web3(window.web3.currentProvider);
-        } else {
-          window.alert(
-            "Non-Ethereum browser detected. You should consider trying MetaMask!"
-          );
-        }
-      };
-      // FETCH HASH FROM BLOCKCHAIN
-      const loadBlockchainData = async () => {
-        const web3 = window.web3;
-        // Load account
-        const accounts = await web3.eth.getAccounts();
-        //console.log("accounts: ", accounts);
-        const networkId = await web3.eth.net.getId();
-        //console.log(networkId);
-        if (networkId) {
-          const contract = new web3.eth.Contract(
-            camp_chain,
-            "0x5FbDB2315678afecb367f032d93F642f64180aa3"
-          );
-
-          setContract({ account: accounts[0], contract });
-          let Question = await contract.methods.getQuestions(12).call();
-          console.log(Question.text);
-          Question = {
-            ...Question,
-            title: "Blockhain Question",
-            rating: 4.5,
-            date: "xx/xx/xxxx",
-          };
-          setQuestions([/*...questions,*/ Question]);
-          console.log(Question.text);
-          console.log("done");
-          console.log(questions);
-        } else {
-          window.alert("Smart contract not deployed to detected network.");
-        }
-      };
-      /*setQuestions(data);*/
-      loadWeb3();
-      loadBlockchainData();
-      // FETCH QUESTIONS FROM IPFS
-      // STORE DATA IN VARIABLE "data"
-    },
-    [
-      /*, contractState*/
-    ]
-  );
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> parent of b220a5a (Modifed Dependancy array for mainpage hook)
-=======
->>>>>>> parent of b220a5a (Modifed Dependancy array for mainpage hook)
-=======
->>>>>>> parent of b220a5a (Modifed Dependancy array for mainpage hook)
-  //console.log(contractState);
   const formatedQuestions = questions
     ? questions.map((question, index) => {
         return (
