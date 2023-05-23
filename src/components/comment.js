@@ -1,5 +1,4 @@
 import { useState } from "react";
-import commentIcon from "../images/comment.png";
 import Ratingbox from "./rating_box";
 
 function Comment({ text, date, rating }) {

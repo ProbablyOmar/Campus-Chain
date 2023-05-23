@@ -45,7 +45,7 @@ function QuestionPage({ questions, contract }) {
     if (question) {
       fetchAnswers();
     }
-  }, [question]);
+  }, [question, contract]);
 
   const update_comments = event => {
     event.preventDefault();
