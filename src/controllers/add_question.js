@@ -2,11 +2,12 @@ function addQuestionHandler(event, state) {
   console.log(state);
   const oldQuestions = state.questions ? [...state.questions] : null;
   try {
+    const date = new Date();
     const newQuestion = {
       title: event.target.elements.title.value,
       body: event.target.elements.post.value,
       voteQ: 0,
-      date: "xx-xx-xxxx",
+      questionDate: date.getTime() / 1000,
     };
     console.log(newQuestion);
     alert("Waiting for meta mask");

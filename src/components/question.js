@@ -1,33 +1,30 @@
 import { useState } from "react";
 import Ratingbox from "./rating_box";
+import { NavLink } from "react-router-dom";
 
-function Question({ title, text, date, voteQ, id, answers }) {
-  let [question, setQuestion] = useState({
-    title,
-    text,
-    date,
-    voteQ,
-    id,
-    answers,
-  });
-  console.log(question.title, question.answers);
-  id = id.toString();
-  console.log(id);
+function Question(state) {
+  let [question, setQuestion] = useState();
+  if (!question) {
+    setQuestion(state);
+  }
+  //console.log(state);
+  //console.log(question);
+  //console.log(answers);
   return (
     <div className="questionbox">
       <Ratingbox
         state={question}
         setState={setQuestion}
-        rating={voteQ}
+        rating={question ? question.voteQ : 0}
         voteName={"voteQ"}
       />
-      <a id="questionlink" href={`questions/${id}`}>
+      <NavLink id="questionlink" to={`questions/${state.id}`}>
         <div className="questiondata">
-          <h2>{title}</h2>
-          <span>{date}</span>
-          <p>{text}</p>
+          <span>{state.date}</span>
+          <h2>{state.title}</h2>
+          <p>{state.text}</p>
         </div>
-      </a>
+      </NavLink>
     </div>
   );
 }

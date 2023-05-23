@@ -1,7 +1,7 @@
 import commentIcon from "../images/comment.png";
 
 function Ratingbox({ state, setState, voteName, rating }) {
-  console.log(state);
+  console.log(rating);
   const upvoteHandler = e => {
     let newState = { ...state };
     console.log(e.target.classList);

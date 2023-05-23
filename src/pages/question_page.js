@@ -11,6 +11,11 @@ function QuestionPage({ questions, contract }) {
   const [question, setQuestion] = useState();
   const [answers, setAnswers] = useState();
 
+  const date = question ? new Date(question.questionDate * 1000) : undefined;
+  let questionDate = date
+    ? `${date.getDate()}-${date.getMonth()}-${date.getFullYear()}`
+    : undefined;
+
   useEffect(() => {
     const fetchQuestion = async () => {
       let Question = contract
@@ -77,8 +82,8 @@ function QuestionPage({ questions, contract }) {
         />
 
         <div className="questiondata">
+          <span>{question ? questionDate : " "}</span>
           <h2>{question ? question.title : " "}</h2>
-          <span>{question ? question.date : " "}</span>
           <p>{question ? question.body : " "}</p>
         </div>
       </div>

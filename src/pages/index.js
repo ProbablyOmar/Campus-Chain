@@ -11,12 +11,11 @@ function MainPage({ contractState, setContract }) {
     const FETCH = async () => {
       if (contractState) {
         let lastcount = await contractState.contract.methods.getCount().call();
-        console.log(lastcount);
         for (let i = 1; i <= lastcount; i++) {
           let Question = await contractState.contract.methods
             .getQuestion(i)
             .call();
-          console.log(Question.body);
+
           setQuestions(questions => {
             return questions ? [Question, ...questions] : [Question];
           });
@@ -31,12 +30,13 @@ function MainPage({ contractState, setContract }) {
 
   const formatedQuestions = questions
     ? questions.map((question, index) => {
-        console.log(question);
+        const date = new Date(question.questionDate * 1000);
+        let questionDate = `${date.getDate()}-${date.getMonth()}-${date.getFullYear()}`;
         return (
           <Question
             title={question.title}
             text={question.body}
-            date={question.date}
+            date={questionDate}
             voteQ={question.voteQ}
             answers={question.answers}
             id={question.questionID}
