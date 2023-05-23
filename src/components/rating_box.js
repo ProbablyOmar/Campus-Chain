@@ -44,8 +44,10 @@ function Ratingbox({ state, setState, voteName, rating }) {
           <path d="M2 10h32L18 26 2 10z" fill="currentColor"></path>
         </svg>
       </button>
-      <img src={commentIcon} width={36} height={30} alt="states" />
-      {state && state.answers ? state.answers.length : 0}
+      {voteName == "voteQ" ? (
+        <img src={commentIcon} width={36} height={30} alt="states" />
+      ) : undefined}
+      {state && state.answers ? state.answers.length : undefined}
     </div>
   );
 }

@@ -5,7 +5,7 @@ function addQuestionHandler(event, state) {
     const newQuestion = {
       title: event.target.elements.title.value,
       body: event.target.elements.post.value,
-      rating: 0,
+      voteQ: 0,
       date: "xx-xx-xxxx",
     };
     console.log(newQuestion);

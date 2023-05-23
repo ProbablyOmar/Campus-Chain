@@ -34,7 +34,9 @@ function Header({ isLoggedIn }) {
 
   return (
     <div className="Header">
-      <span id="title">Campus-Chain</span>
+      <NavLink to="/" id="title">
+        Campus-Chain
+      </NavLink>
       <span>
         <input className="search" placeholder="Search posts"></input>
       </span>

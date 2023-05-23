@@ -39,13 +39,12 @@ function MainPage({ contractState, setContract }) {
             date={question.date}
             voteQ={question.voteQ}
             answers={question.answers}
-            id={index}
+            id={question.questionID}
             key={index}
           />
         );
       })
     : null;
-  console.log(questions);
   const postHandler = event => {
     event.preventDefault();
     document.getElementById("postoverlay").style.display = "block";
