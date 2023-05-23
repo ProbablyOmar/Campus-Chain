@@ -3,17 +3,12 @@ import Ratingbox from "./rating_box";
 import { NavLink } from "react-router-dom";
 
 function Question(state) {
-  let [question, setQuestion] = useState();
-  if (!question) {
-    setQuestion(state);
-  }
-  //console.log(state);
-  //console.log(question);
-  //console.log(answers);
+  const [question, setQuestion] = useState(state);
+
   return (
     <div className="questionbox">
       <Ratingbox
-        state={question}
+        state={state}
         setState={setQuestion}
         rating={question ? question.voteQ : 0}
         voteName={"voteQ"}

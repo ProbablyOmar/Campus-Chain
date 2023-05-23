@@ -1,36 +1,32 @@
 import commentIcon from "../images/comment.png";
+import { useState } from "react";
 
 function Ratingbox({ state, setState, voteName, rating }) {
-  console.log(rating);
+  const [vote, setVote] = useState(0);
+
   const upvoteHandler = e => {
     let newState = { ...state };
-    console.log(e.target.classList);
+    newState[voteName] = newState[voteName] * 1;
+
     e.target.classList.toggle("clicked");
     if (e.target.classList.contains("clicked")) {
-      newState[voteName]++;
-      setState(newState);
+      setVote(1);
     } else {
-      newState[voteName]--;
-      setState(newState);
+      setVote(0);
     }
-    console.log(newState);
-    rating = newState[voteName];
   };
 
   const downvoteHandler = e => {
     let newState = { ...state };
-    console.log(e.target.classList);
+    newState[voteName] = newState[voteName] * 1;
+
     e.target.classList.toggle("clicked");
     if (e.target.classList.contains("clicked")) {
-      newState[voteName]--;
-      setState(newState);
+      setVote(-1);
     } else {
-      newState[voteName]++;
-      setState(newState);
+      setVote(0);
     }
-    rating = newState[voteName];
   };
-
   return (
     <div className="ratingbox">
       <button className="vote" onClick={upvoteHandler}>
@@ -38,7 +34,7 @@ function Ratingbox({ state, setState, voteName, rating }) {
           <path d="M2 21h32L18 5 2 21z" fill="currentColor"></path>
         </svg>
       </button>
-      <span style={{ color: "white" }}>{rating}</span>
+      <span style={{ color: "white" }}>{rating * 1 + vote}</span>
       <button className="vote" onClick={downvoteHandler}>
         <svg width="36" height="36">
           <path d="M2 10h32L18 26 2 10z" fill="currentColor"></path>
