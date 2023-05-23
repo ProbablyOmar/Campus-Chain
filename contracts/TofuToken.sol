@@ -13,7 +13,7 @@ contract TofuToken is ERC20Capped, ERC20Burnable {
 
     constructor(uint256 cap, uint256 _reward) ERC20("TofuToken", "TOF") ERC20Capped(cap * (10 ** decimals()))  {
         owner = payable(msg.sender);
-        _mint(owner, 1000000 * (10 ** decimals()));
+        _mint(owner, 7000000 * (10 ** decimals()));
         blockReward = _reward * (10 ** decimals());
     }
 
@@ -32,9 +32,9 @@ contract TofuToken is ERC20Capped, ERC20Burnable {
         blockReward = _reward * (10 ** decimals());
     }
 
-    function destroy() public onlyOwner {
-        selfdestruct(owner);
-    }
+    //function destroy() public onlyOwner {
+    //    selfdestruct(owner);
+    //}
 
     function _mint(address account, uint256 amount) internal override(ERC20, ERC20Capped) {
         super._mint(account, amount);

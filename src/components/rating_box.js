@@ -1,17 +1,20 @@
 import commentIcon from "../images/comment.png";
 
-function Ratingbox({ rating, state, setState }) {
+function Ratingbox({ state, setState, voteName, rating }) {
+  console.log(state);
   const upvoteHandler = e => {
     let newState = { ...state };
     console.log(e.target.classList);
     e.target.classList.toggle("clicked");
     if (e.target.classList.contains("clicked")) {
-      newState.rating--;
+      newState[voteName]++;
       setState(newState);
     } else {
-      newState.rating++;
+      newState[voteName]--;
       setState(newState);
     }
+    console.log(newState);
+    rating = newState[voteName];
   };
 
   const downvoteHandler = e => {
@@ -19,12 +22,13 @@ function Ratingbox({ rating, state, setState }) {
     console.log(e.target.classList);
     e.target.classList.toggle("clicked");
     if (e.target.classList.contains("clicked")) {
-      newState.rating++;
+      newState[voteName]--;
       setState(newState);
     } else {
-      newState.rating--;
+      newState[voteName]++;
       setState(newState);
     }
+    rating = newState[voteName];
   };
 
   return (
@@ -41,7 +45,7 @@ function Ratingbox({ rating, state, setState }) {
         </svg>
       </button>
       <img src={commentIcon} width={36} height={30} alt="states" />
-      25
+      {state && state.answers ? state.answers.length : 0}
     </div>
   );
 }
