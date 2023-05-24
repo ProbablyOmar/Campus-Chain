@@ -1,4 +1,5 @@
 # BlockCampus: A Blockchain-Based DApp for enhancing Student Engagement and Reward Mechanisms in an Academic Community for E-JUST University
+This research paper presents a comprehensive study and implementation of a decentralized application (Dapp) leveraging block chain technology to address these needs specifically for E-JUST (Egypt-Japan University of Science and Technology) students and academic staff.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
