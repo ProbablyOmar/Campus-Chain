@@ -11,7 +11,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Available Scripts
 The smart contracts are already deployed into the Sepolia test.
-Before running the Dapp, install all the needed dependecnices by running ### `npm install` in the project home directory. 
+Before running the Dapp, install all the needed dependecnices by running `npm install` in the project home directory. 
 
 In the project directory, you can run:
 
