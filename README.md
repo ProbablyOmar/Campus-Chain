@@ -1,7 +1,8 @@
 # BlockCampus: A Blockchain-Based DApp for enhancing Student Engagement and Reward Mechanisms in an Academic Community for E-JUST University [Group Code: F2022_09]
 This research paper presents a comprehensive study and implementation of a decentralized application (Dapp) leveraging block chain technology to address these needs specifically for E-JUST (Egypt-Japan University of Science and Technology) students and academic staff.
 
-## Demo
+## Demo (Visit the following 2 links)
+
 1- [Logic Illustration](https://drive.google.com/file/d/1iFt1o6lAjGUDFH00E-SeXMqPv7v1zImB/view)
 
 2- [Our Dapp In Action](https://drive.google.com/file/d/1iFt1o6lAjGUDFH00E-SeXMqPv7v1zImB/view)
