@@ -1,21 +1,10 @@
-# BlockCampus: A Blockchain-Based DApp for enhancing Student Engagement and Reward Mechanisms in an Academic Community for E-JUST University [Group Code: F2022_09]
-This research paper presents a comprehensive study and implementation of a decentralized application (Dapp) leveraging block chain technology to address these needs specifically for E-JUST (Egypt-Japan University of Science and Technology) students and academic staff.
-
-## Demo (Visit the following 2 links)
-
-1- [Logic Illustration](https://drive.google.com/file/d/1iFt1o6lAjGUDFH00E-SeXMqPv7v1zImB/view)
-
-2- [Our Dapp In Action](https://drive.google.com/file/d/1PTptUXiuKGpy6GznAC7lgQqJgJn21t4J/view)
+# Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 
 In the project directory, you can run:
-
-### `npm install`
-
-To install all required dependencies
 
 ### `npm start`
 
@@ -79,7 +68,3 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-
-
-## Collaborators
-[<a href="https://github.com/ProbablyOmar">Omar Wassim</a> - <a href="https://github.com/youssef-elharty">Youssef El-harty</a> - <a href="https://github.com/MariamAmy">Mariam Ayman</a> -  <a href="https://github.com/Rashed6122">Ahmed Rashed</a> - <a href="https://github.com/AhmeedFatehy">Ahmed Fathy</a> - <a href="https://github.com/ahmedhjaj/">Ahmed Hagag</a>]
