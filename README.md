@@ -1,5 +1,4 @@
-# Getting Started with Create React App
-
+# BlockCampus: A Blockchain-Based DApp for enhancing Student Engagement and Reward Mechanisms in an Academic Community for E-JUST University (Group Code: F2022_09)
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
